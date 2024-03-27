@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./SearchBox.css";
 // Cosum Icons
 import close from "../../assets/images/close.png";
+import logo from '../../assets/images/logo.jpg'
 import search from "../../assets/images/loupe.png";
 import user from "../../assets/images/user.png";
 import addtocart from "../../assets/images/cart.png";
@@ -39,8 +40,7 @@ function Navigation() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
-            src="https://www.shrichyawanayurved.com/cdn/shop/files/Logo_R_-03-03.png?v=1702027458&width=500"
-            width="120px"
+            src={logo}
             alt="Logo"
           />
         </a>
