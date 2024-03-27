@@ -1,0 +1,36 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer img {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.MainHeadding {
+  display: flex;
+  justify-content: space-between;
+}
+.cardTitle {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 600 !important;
+}
+.PriceHeading {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(232, 234, 236);
+  padding: 10px;
+}
+
+.PriceHeading h6 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.Info {
+  margin-top: 10px;
+}

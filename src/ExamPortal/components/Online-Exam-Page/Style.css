@@ -1,0 +1,97 @@
+body {
+  background-color: rgb(234, 234, 234);
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.Left-Box {
+  background-color: rgb(255, 255, 255);
+  width: 75%;
+  margin-right: 15px;
+  padding: 40px;
+  border-radius: 10px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.BTN {
+  width: 75%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.BTN button {
+  background-color: transparent;
+  border: 2px solid black;
+  width: 150px;
+  height: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.BTN button:hover {
+  background-color: rgb(234, 234, 234);
+  border: 2px solid black;
+  width: 150px;
+  height: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.Right-Box {
+  background-color: rgb(255, 255, 255);
+  width: 25%;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Right-Box button {
+  background-color: transparent;
+  border: 2px solid black;
+  width: 50px;
+  height: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.Right-Box button:hover {
+  background-color: rgb(234, 234, 234);
+  border: 2px solid black;
+  width: 50px;
+  height: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.CountQue {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: rgb(248, 248, 248);
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.C-Scoure {
+  padding: 5px;
+  color: rgb(99, 187, 10);
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.In-Scoure {
+  padding: 5px;
+  color: rgb(240, 10, 10);
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 20px;
+}

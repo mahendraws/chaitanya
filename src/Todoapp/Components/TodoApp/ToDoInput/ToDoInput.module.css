@@ -1,0 +1,102 @@
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 45vh;
+  margin-left: 10px;
+}
+
+/* media Query */
+
+@media screen and (max-width: 428px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 48vh;
+    margin-left: -100px;
+    margin-left: -80px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 48vh;
+    margin-left: -100px;
+  }
+}
+
+.InputText input {
+  width: 40vh;
+  padding: 3px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+/* media Query */
+@media screen and (max-width: 390px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 48vh;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .InputText input {
+    width: 40vh;
+    padding: 3px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .InputText input {
+    width: 40vh;
+    padding: 3px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+}
+
+.InputText img {
+  width: 30px;
+  height: 30px;
+}
+.InputText button {
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 7px 18px 7px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(212, 175, 245);
+  color: rgb(0, 0, 0);
+}
+.InputText button:hover {
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 7px 18px 7px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(252, 252, 252);
+  color: rgb(0, 0, 0);
+}

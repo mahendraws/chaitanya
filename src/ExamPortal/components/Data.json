@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "question": "Who proposed the Preamble before the Drafting Committee of the Constitution.",
+    "option1": "Jawaharlal Nehru",
+    "option2": "B.R. Ambedkar",
+    "option3": "B.N.Rau",
+    "option4": "Mahatma Gandhi",
+    "correctans": "Jawaharlal Nehru"
+  },
+  {
+    "id": 2,
+    "question": "Who is the guardian of fundamental Rights enumerated in Indian Constitution.?",
+    "option1": "Supreme Court",
+    "option2": "Parliament",
+    "option3": "Constitution",
+    "option4": " President",
+    "correctans": "Supreme Court"
+  },
+  {
+    "id": 3,
+    "question": "The first Law Officer of the Government of India is the ",
+    "option1": "Union Law Minister",
+    "option2": "Secreatary, Ministry of Law",
+    "option3": "Attorney-General for India",
+    "option4": "Chief Justice of the Supreme Court",
+    "correctans": "Attorney-General for India"
+  },
+  {
+    "id": 4,
+    "question": "The Constitution of India borrowed the scheme of Indian Federation from the constitution of ",
+    "option1": "USA",
+    "option2": "Canada",
+    "option3": "United Kingdom",
+    "option4": "Ireland",
+    "correctans": "Canada"
+  },
+  {
+    "id": 5,
+    "question": "Who have the power to decide an election petition.?",
+    "option1": "Parliament",
+    "option2": "Supreme Court",
+    "option3": "High Courts",
+    "option4": "Election Commission",
+    "correctans": "High Courts"
+  },
+  {
+    "id": 6,
+    "question": "Which of the following exercised the most profound influence in framing the Indian Constitution.?",
+    "option1": "British Constitution",
+    "option2": "US Constitution",
+    "option3": "Irish Constitution",
+    "option4": "The Government of India Act 1935",
+    "correctans": "The Government of India Act,1935"
+  },
+  {
+    "id": 7,
+    "question": "The item ' Education' belongs to the ",
+    "option1": "Union List",
+    "option2": "State List",
+    "option3": "Concurrent List",
+    "option4": " Residuary",
+    "correctans": "Concurrent List"
+  },
+  {
+    "id": 8,
+    "question": "Who was the Chairman of the Union Power Committee of Constituent Assembly of India?",
+    "option1": "Sardar",
+    "option2": "Dr. B.R.Ambedkar",
+    "option3": "Sir Allad",
+    "option4": " Pt. Jawaharlal",
+    "correctans": " Pt. Jawaharlal"
+  },
+  {
+    "id": 9,
+    "question": "Who called Indian Federalism as the Co-operative Federalism",
+    "option1": "G.Austin",
+    "option2": "K.C.Wheare",
+    "option3": "Sir Ivor Jennings",
+    "option4": " D.D.Basu",
+    "correctans": "G.Austin"
+  },
+  {
+    "id": 10,
+    "question": "Article 1 of the Constitution declares India as",
+    "option1": "Fedaral State",
+    "option2": " Quasi Federal State",
+    "option3": "Unitary State",
+    "option4": "Union of States",
+    "correctans": "Union of States"
+  }
+]

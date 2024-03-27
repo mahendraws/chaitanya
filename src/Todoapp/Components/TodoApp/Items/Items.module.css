@@ -1,0 +1,109 @@
+.container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 15px;
+  width: 45vh;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Query */
+@media screen and (max-width: 750px) {
+  .container {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .container {
+    background-color: rgb(244, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 15px;
+    width: 48vh;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: -80px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .container {
+    background-color: rgb(244, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 15px;
+    width: 48vh;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: -100px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    background-color: rgb(244, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 15px;
+    width: 40vh;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .Items p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif !important;
+    font-size: 17px;
+
+    color: rgb(0, 0, 0) !important;
+  }
+}
+
+.Items {
+  line-height: 5px;
+}
+
+.Items p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.container button {
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 3px !important;
+}
+
+.container img {
+  margin-top: -30px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Edit Input Fild */
+
+.INPUTFILD input {
+  position: relative;
+  top: -8px;
+}
+
+.EditesBTN {
+  display: flex;
+  justify-content: space-between;
+}
