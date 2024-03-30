@@ -64,9 +64,9 @@ function BestSeller() {
       </Container> */}
 
         <Carousel show={3.5} slide={3} swiping={true}>
-          {allimags.map((val) => {
+          {allimags.map((val,index) => {
             return (
-              <>
+              <div key={index}>
                 <div
                   className="card-group"
                   style={{ width: "20rem", cursor: "pointer" }}
@@ -92,7 +92,7 @@ function BestSeller() {
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </Carousel>

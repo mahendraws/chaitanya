@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -9,11 +9,19 @@ import logo from '../../assets/images/logo.jpg'
 import search from "../../assets/images/loupe.png";
 import user from "../../assets/images/user.png";
 import addtocart from "../../assets/images/cart.png";
-
+import { useNavigate } from "react-router-dom";
+import { ShopContext } from "../../contexts/shopContextProvider";
 function Navigation() {
   const [searchBox, setSearchBox] = useState(false);
+  const {setLogin,isLogin,cartItems,setCartItems} = useContext(ShopContext)
   // console.log(searchBox);
+const navigate = useNavigate()
 
+const logout=()=>{
+ setLogin(false);
+ setCartItems(0);
+
+}
   return (
     <>
       {searchBox ? (
@@ -41,6 +49,7 @@ function Navigation() {
         <a className="navbar-brand" href="#">
           <img
             src={logo}
+            width="120px"
             alt="Logo"
           />
         </a>
@@ -72,24 +81,16 @@ function Navigation() {
                 </a>
               </li>
             </Link>
-            <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
-                SHOP
-              </a>
-              <div className="dropdown-content">
-                <a href="#">Ayurvedic Products</a>
-                <a href="#">Nutrition & Supplements</a>
-                <a href="#">Personal Care</a>
-              </div>
-            </li>
+     
             <Link to="/AllProducts">
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  PRODUCTS
+                  SHOP
                 </a>
               </li>
             </Link>
-            <li className="nav-item SearchItemIcon">
+            
+            {/* <li className="nav-item SearchItemIcon">
               <a className="nav-link" href="#">
                 <button
                   onClick={() => {
@@ -99,7 +100,8 @@ function Navigation() {
                   <img src={search} alt="Search" width="25px" />
                 </button>
               </a>
-            </li>
+            </li> */}
+
             <li className="nav-item DropdownMenu">
               <a className="nav-link" href="#">
                 <img
@@ -111,25 +113,21 @@ function Navigation() {
                 />
               </a>
               <div className="dropdown-content2">
-                <Link to="/Login">
-                  <a href="#" className="items">
-                    Login
-                  </a>
-                </Link>
-                <Link to="/Profile">
-                  <a href="#" className="items">
-                    Profile
-                  </a>
-                </Link>
-
-                <a href="#" className="items">
-                  Logout
-                </a>
+                {
+                  (isLogin)?<>
+                <Link to="/Profile" className="items">Profile</Link>
+                <Link to="/Home" className="items" onClick={logout}>Logout</Link></>
+                :
+                <Link to="/Login" className="items">Login</Link>
+                }
+                
+                
               </div>
             </li>
             <Link to="/Addtocart">
               <li className="nav-item">
                 <a className="nav-link" href="#">
+                  {cartItems}
                   <img src={addtocart} alt="Add To Cart" width="25px" />
                 </a>
               </li>

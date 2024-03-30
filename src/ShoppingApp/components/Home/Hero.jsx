@@ -45,8 +45,8 @@ function Hero() {
         itemClass="carousel-item-padding-40-px"
         containerClass="carousel-container"
       >
-        {BannersData.map((data) => (
-          <img src={data.url} alt="img" width="100%" height="430px" />
+        {BannersData.map((data,index) => (
+          <img key={index} src={data.url} alt="img" width="100%" height="430px" />
         ))}
       </Carousel>
     </>

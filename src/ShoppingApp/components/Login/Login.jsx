@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import axios from "axios";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { ShopContext } from "../../contexts/shopContextProvider";
+
 function Login() {
   const navigate = useNavigate();
-
+const {setLogin,setCustID,setCartItems} = useContext(ShopContext)
   const [logininfo, setLoginInfo] = useState({
     email: "",
-    Password: "",
+    password: "",
   });
 
   function sendInfo() {
@@ -17,29 +23,29 @@ function Login() {
 
   function sendData(e) {
     e.preventDefault();
-    const form = e.currentTarget;
-    var data = new FormData(form);
+    axios
+    .post("https://www.ncenanded.com/project/chaitanya/login.php", logininfo)
+    .then(function (response) {
+      console.log("Create Account Seanding Data >>> ", response.data.totalItems);
 
-    fetch("https://www.ncenanded.com/project/chaitanya/server.php", {
-      method: "POST",
-      body: data,
+      if(response.data.error)
+      {
+        notify(response.data.error)
+  
+      }else{
+        setCartItems(9)
+        setLogin(true)
+        setCustID(response.data.cust_id)
+        notify(response.data.success)
+      
+        setTimeout(function(){navigate("/AllProducts")},1000);
+      }
     })
-      .then((res) => res.json())
-      .then((res) => displayResult(res));
+    .catch(function(err){ notify("Server is busy, Please try after some time...") })
   }
 
-  function displayResult(response) {
-    console.log(response);
 
-    if (response.success == 1) {
-      navigate("/AllProducts");
-    } else {
-      alert("Woring User Name and Password..!");
-    }
-
-    // document.getElementById("result").innerHTML = Result = ${response.success};
-  }
-
+  const notify = (mess) => toast(mess);
   return (
     <>
       <div className="container Main">
@@ -48,12 +54,12 @@ function Login() {
 
           <hr />
 
-          <form method="post" onSubmit={sendData}>
+          <form  onSubmit={sendData}>
             <div className="InputFild">
               <div>
-                <input
+                <input requried
                   name="user_email"
-                  type="text"
+                  type="email"
                   placeholder="Email"
                   onChange={(e) => {
                     setLoginInfo({ ...logininfo, email: e.target.value });
@@ -62,12 +68,12 @@ function Login() {
                 {/* {logininfo.name} */}
               </div>
               <div>
-                <input
+                <input required
                   name="password"
                   type="password"
                   placeholder="Password"
                   onChange={(e) => {
-                    setLoginInfo({ ...logininfo, Password: e.target.value });
+                    setLoginInfo({ ...logininfo, password: e.target.value });
                   }}
                 />
               </div>
@@ -89,6 +95,7 @@ function Login() {
               </p>
             </div>
           </form>
+          <ToastContainer autoClose={1000}/>
         </div>
       </div>
     </>

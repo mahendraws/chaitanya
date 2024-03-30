@@ -1,4 +1,9 @@
 
+import product1 from './ProductsImages/amrutsudhabig.jpg'
+import product2 from './ProductsImages/amrutkumbhabig.jpg'
+
+
+let allProducts = 
 [
   {
     "productId": "1",
@@ -12,7 +17,7 @@
       { "quantity": "1000ml", "price": "500", "regularPrice": "650" }
     ],
     "productImages": [
-      "amrutsudhabig.jpg",
+        product1,
       "image1.jpg",
       "image1.jpg",
       "image1.jpg"
@@ -97,7 +102,7 @@
       { "quantity": "1000ml", "price": "500", "regularPrice": "650" }
     ],
     "productImages": [
-      "amrutkumbhabig.jpg",
+        product2,
       "image1.jpg",
       "image1.jpg",
       "image1.jpg"
@@ -163,7 +168,8 @@
     ],
 
     "productDetails": [
-      { "heading": "Product Description", "content": "content text text" },
+      { "heading": "Product Description",
+       "content": "content text text" },
       {
         "heading": "Ingredients",
         "content": "It consists of Arjun Chal, Aswagandha, Gokhru, Satvari, Utangan, Shilajeet, Tulsi, Salimpanja, Amla, Harde, Baheda, Suth,Mari, Pipal."
@@ -171,3 +177,5 @@
     ]
   }
 ]
+
+export default allProducts;

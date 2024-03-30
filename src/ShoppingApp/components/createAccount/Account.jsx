@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Account.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Account() {
+
+  const navigate = useNavigate()
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -10,37 +16,43 @@ function Account() {
     password: "",
   });
 
-  function handelClickSendData() {
-    // console.log(data);
-    // alert("Hello");
+  const [error,setError] = useState("")
+
+  function handelClickSendData(event) {
+    event.preventDefault() 
     axios
       .post("https://www.ncenanded.com/project/chaitanya/createcust.php", data)
       .then(function (response) {
         console.log("Create Account Seanding Data >>> ", response.data);
-      });
+
+        if(response.data.error)
+        {
+          notify(response.data.error)
+    
+        }else{
+          notify(response.data.success)
+          setTimeout(function(){navigate("/Login")},2000);
+
+        }
+
+      })
+      .catch(function(err){ setError("server is busy, Please try again...") })
+      
   }
 
-  // async function handelClickSendData() {
-  //   try {
-  //     const response = await axios.post(
-  //       "https://www.ncenanded.com/project/chaitanya/createcust.php",
-  //       data
-  //     );
-  //     console.log("Create Account Sending Data >>> ", response.data);
-  //   } catch (error) {
-  //     console.error("Error while sending data:", error);
-  //   }
-  // }
+
+  const notify = (mess) => toast(mess);
+
   return (
     <>
       <div className="container MainAc">
         <div className="MainAccount">
           <h5>Create Account </h5>
-
+<form onSubmit={handelClickSendData}>
           <hr />
           <div className="InputFild02">
             <div>
-              <input
+              <input required
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -50,7 +62,7 @@ function Account() {
               />
             </div>
             <div>
-              <input
+              <input required
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -60,7 +72,7 @@ function Account() {
               />
             </div>
             <div>
-              <input
+              <input required
                 type="text"
                 name="mobilenumber"
                 placeholder="Mobile Number"
@@ -70,7 +82,7 @@ function Account() {
               />
             </div>
             <div>
-              <input
+              <input required
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -81,15 +93,18 @@ function Account() {
             </div>
           </div>
           <div className="Create-Account-btn">
-            <button onClick={handelClickSendData}>Create Account </button>
-
+            <button type="submit" >Create Account </button>
+          
             <p className="Account">
               Have an account?
               <Link to="/Login">
                 <u className="mx-2">Sign in</u>
               </Link>
             </p>
+            <span>{error}</span>
+            <ToastContainer autoClose={1000}/>
           </div>
+          </form>
         </div>
       </div>
     </>

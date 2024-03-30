@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext,useEffect,useState } from "react";
 import "./Profile.css";
 import axios from "axios";
+import { ShopContext } from "../../contexts/shopContextProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 function Profile() {
+  const {custID} = useContext(ShopContext)
+
   const [profileData, setProfileData] = useState({
     name: "Sudhanshu Gaikwad",
     email: "sudhanshugaikwad517@gmail.com",
@@ -13,19 +19,45 @@ function Profile() {
     state: "Maharashtra",
     city: "Nanded",
     pincode: "431605",
+    cust_id:"",
+    isUpdate:"",
   });
+
+  const notify = (mess) => toast(mess);
+useEffect(()=>{
+  axios
+  .post(
+    "https://www.ncenanded.com/project/chaitanya/profile.php",
+    {"cust_id":custID,"isUpdate":"0"}
+  )
+  .then(function (response) {
+    setProfileData(response.data)
+    console.log("from profile .... ",response.data);
+    //navigate('/');
+  });
+
+
+},[])
+
 
   const profiledatasend = () => {
     // console.log("Profile data:", profileData);
     // alert(profileData.pincode);
+   // setProfileData({...profileData,cust_id: custID,isUpdate:"1"})
+   let c = profileData;
+   c.isUpdate = "1";
+    setProfileData(c)
+    console.log("raw data  ",c)
+
     axios
       .post(
-        "https://www.ncenanded.com/project/chaitanya/createcust.php",
+        "https://www.ncenanded.com/project/chaitanya/profile.php",
         profileData
       )
       .then(function (response) {
-        console.log(response.data);
+        console.log("from profile .... ",response.data);
         //navigate('/');
+        notify(response.data.success)
       });
   };
 
@@ -218,6 +250,7 @@ function Profile() {
           </div>
         </div>
       </div>
+      <ToastContainer autoClose={1000}/>
     </>
   );
 }

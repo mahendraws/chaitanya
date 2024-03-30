@@ -1,22 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Rating from "react-star-rating-lite";
+import { ShopContext } from "../../contexts/shopContextProvider";
 
 import "./style.css";
-import Data from "../../data.json";
+
 import { useParams } from "react-router-dom";
 
 import minus from "../../assets/images/minus.png";
 import add from "../../assets/images/plus.png";
 
 function ProductPage() {
+const navigate = useNavigate()
+
   const sProduct = useParams();
   let currentProduct = Number(sProduct.id) - 1;
   // const currentProduct = props.productId;
   // console.log(currentProduct);
-
+const {allProducts,addToCart,isLogin} = useContext(ShopContext)
   const [num, SetNum] = useState(1);
   const incriment = () => {
     SetNum(num + 1);
@@ -26,6 +29,17 @@ function ProductPage() {
       SetNum(num - 1);
     }
   };
+
+
+  const addCart=(id,quantity)=>{
+    if(!isLogin)
+    {
+      navigate("/Login");
+    }else{
+      addToCart(id,quantity)
+    }
+  }
+
   return (
     <>
       <div className="container main-comtainer">
@@ -33,38 +47,38 @@ function ProductPage() {
           <div>
             <Carousel>
               <div>
-                <img src={Data[currentProduct].productImages[0]} />
+                <img src={allProducts[currentProduct].productImages[0]} alt=""/>
               </div>
 
               <div>
-                <img src={Data[currentProduct].productImages[0]} />
+                <img src={allProducts[currentProduct].productImages[0]} alt=""/>
               </div>
 
               <div>
-                <img src={Data[currentProduct].productImages[0]} />
+                <img src={allProducts[currentProduct].productImages[0]} alt=""/>
               </div>
 
               <div>
-                <img src={Data[currentProduct].productImages[0]} />
+                <img src={allProducts[currentProduct].productImages[0]} alt=""/>
               </div>
             </Carousel>
           </div>
         </div>
 
         <div className="rightMenu">
-          <h2>{Data[currentProduct].title}</h2>
+          <h2>{allProducts[currentProduct].title}</h2>
           <p>
             <span style={{ fontWeight: "700", fontSize: "20px" }}>
-              ₹{Data[currentProduct].price}
+              ₹{allProducts[currentProduct].price}
             </span>
 
             <span style={{ fontWeight: "700", fontSize: "15px" }}>
               <s className="mx-2" style={{ color: "gray" }}>
-                ₹{Data[currentProduct].regularPrice}
+                ₹{allProducts[currentProduct].regularPrice}
               </s>
             </span>
             <span className="mx-2">
-              Tax included.Shipping calculated at checkout.
+              Tax included. Shipping Free.
             </span>
 
             <div className="d-flex">
@@ -82,18 +96,18 @@ function ProductPage() {
               </div>
             </div>
           </p>
-          <h3>{Data[currentProduct].benifitSection[0].title}</h3>
+          <h3>{allProducts[currentProduct].benifitSection[0].title}</h3>
           <div></div>
           <ul>
-            <li>{Data[currentProduct].benifitSection[0].desc}</li>
-            <li>{Data[currentProduct].benifitSection[1].desc}</li>
-            <li>{Data[currentProduct].benifitSection[2].desc}</li>
-            <li>{Data[currentProduct].benifitSection[3].desc}</li>
+            <li>{allProducts[currentProduct].benifitSection[0].desc}</li>
+            <li>{allProducts[currentProduct].benifitSection[1].desc}</li>
+            <li>{allProducts[currentProduct].benifitSection[2].desc}</li>
+            <li>{allProducts[currentProduct].benifitSection[3].desc}</li>
           </ul>
           <div>
-            <span> Size: Pack of</span>
+            <span> Size:</span>
             <div className="PackeCartMain">
-              {Data[currentProduct].size.map((item) => {
+              {allProducts[currentProduct].size.map((item) => {
                 return (
                   <>
                     <div className=" mt-2 PackeCart mx-2 mb-3 mt-3">
@@ -152,7 +166,7 @@ function ProductPage() {
 
           <div className="Bynow-btn">
             <div>
-              <button>ADD TO CART</button>
+              <button onClick={()=>{addCart(allProducts[currentProduct].productId,num)}}>ADD TO CART</button>
             </div>
             <div className="Bynow-btn2">
               <button>BUY IT NOW</button>
@@ -311,11 +325,11 @@ function ProductPage() {
           <div class="card mx-3 MainCart">
             <span className="Box mx-4 mt-3">1</span>
             <img
-              class="card-img-top p-4"
+              className="card-img-top p-4"
               src="https://www.shrichyawanayurved.com/cdn/shop/files/thyroid_care_capsule-25.webp?v=1694602199&width=500"
-              alt="Card image cap"
+              alt="Card cap"
             />
-            <div class="card-body">
+            <div className="card-body">
               <h5
                 class="card-title"
                 style={{
@@ -331,13 +345,13 @@ function ProductPage() {
           <div class="card mx-3 MainCart">
             <span className="Box mx-4 mt-3">2</span>
             <img
-              class="card-img-top p-4"
+              className="card-img-top p-4"
               src="https://www.shrichyawanayurved.com/cdn/shop/files/thyroid_care_capsule-26.webp?v=1694602200&width=500"
-              alt="Card image cap"
+              alt="Card cap"
             />
-            <div class="card-body">
+            <div className="card-body">
               <h5
-                class="card-title"
+                className="card-title"
                 style={{
                   fontSize: "22px",
                   fontWeight: "600",
@@ -348,14 +362,14 @@ function ProductPage() {
               </h5>
             </div>
           </div>
-          <div class="card mx-3 MainCart">
+          <div className="card mx-3 MainCart">
             <span className="Box mx-4 mt-3">3</span>
             <img
               class="card-img-top p-4"
               src="https://www.shrichyawanayurved.com/cdn/shop/files/thyroid_care_capsule-27.webp?v=1694602200&width=500"
-              alt="Card image cap"
+              alt="Cars cap"
             />
-            <div class="card-body">
+            <div className="card-body">
               <h5
                 class="card-title"
                 style={{
