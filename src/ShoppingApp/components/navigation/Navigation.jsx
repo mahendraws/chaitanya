@@ -13,14 +13,15 @@ import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../../contexts/shopContextProvider";
 function Navigation() {
   const [searchBox, setSearchBox] = useState(false);
-  const {setLogin,isLogin,cartItems,setCartItems} = useContext(ShopContext)
+  const {cust_name,setCustName,setLogin,isLogin,cartItems,setCartProduct,setCustID,cartProduct} = useContext(ShopContext)
   // console.log(searchBox);
 const navigate = useNavigate()
 
 const logout=()=>{
  setLogin(false);
- setCartItems(0);
-
+ setCustID(0)
+ setCartProduct([]);
+ setCustName("")
 }
   return (
     <>
@@ -103,8 +104,8 @@ const logout=()=>{
             </li> */}
 
             <li className="nav-item DropdownMenu">
-              <a className="nav-link" href="#">
-                <img
+              <a className="nav-link" style={{display:"flex"}} href="#">
+                {cust_name} <img
                   className="nav-link"
                   style={{ marginTop: "-9px" }}
                   src={user}
@@ -127,7 +128,7 @@ const logout=()=>{
             <Link to="/Addtocart">
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  {cartItems}
+                  {cartProduct.length}
                   <img src={addtocart} alt="Add To Cart" width="25px" />
                 </a>
               </li>

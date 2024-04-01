@@ -175,6 +175,92 @@ let allProducts =
         "content": "It consists of Arjun Chal, Aswagandha, Gokhru, Satvari, Utangan, Shilajeet, Tulsi, Salimpanja, Amla, Harde, Baheda, Suth,Mari, Pipal."
       }
     ]
+  },
+  {
+    "productId": "3",
+    "title": "paracitimol - fever",
+    "cat": "Thyroid Carr",
+    "price": "999",
+    "regularPrice": "1,001",
+    "productBenifit": ["Benifit 1", "Benifit 2", "Benifit 3"],
+    "size": [
+      { "quantity": "500ml", "price": "300", "regularPrice": "350" },
+      { "quantity": "1000ml", "price": "500", "regularPrice": "650" }
+    ],
+    "productImages": [
+        product1,
+      "image1.jpg",
+      "image1.jpg",
+      "image1.jpg"
+    ],
+
+    "benifitSection": [
+      {
+        "title": "Leuco-Out Lep - Key Benefits",
+        "url": "image1.jpg",
+        "desc": "Reduces skin pigmentation"
+      },
+      {
+        "title": "title2",
+        "url": "image1.jpg",
+        "desc": "Prevents skin discolouration"
+      },
+      {
+        "title": "title1",
+        "url": "image1.jpg",
+        "desc": "Reduces rashes and skin inflammation"
+      },
+      {
+        "title": "title1",
+        "url": "image1.jpg",
+        "desc": "Soothes the affected area"
+      }
+    ],
+
+    "IngredientSection": [
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      },
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      },
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      }
+    ],
+
+    "howtouseSection": [
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      },
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      },
+      {
+        "title": "Gokhru",
+        "url": "image1.jpg",
+        "desc": "Aids in regulating Blood Pressure"
+      }
+    ],
+
+    "productDetails": [
+      { "heading": "Product Description",
+       "content": "content text text" },
+      {
+        "heading": "Ingredients",
+        "content": "It consists of Arjun Chal, Aswagandha, Gokhru, Satvari, Utangan, Shilajeet, Tulsi, Salimpanja, Amla, Harde, Baheda, Suth,Mari, Pipal."
+      }
+    ]
   }
 ]
 

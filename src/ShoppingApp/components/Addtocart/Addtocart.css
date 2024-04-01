@@ -32,6 +32,7 @@ body {
 .Product-item {
   display: flex;
   justify-content: space-between;
+  column-gap: 20px;
 }
 
 .Product-item p {
@@ -42,7 +43,26 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.checkout{
 
+  text-align: center;
+  margin-bottom:100px;
+}
+.checkout button {
+  background-color: orangered;
+  border: 1px solid orangered;
+  padding: 10px 60px;
+  color: white;
+
+}
+
+.checkout button:hover {
+  background-color: transparent;
+  border: 1px solid orangered;
+  padding: 10px 60px;
+  color: orangered;
+
+}
 @media screen and (max-width: 768px) {
   .Product-info {
     display: inline;
@@ -70,6 +90,13 @@ body {
 
 .Range {
   display: flex;
+}
+
+.totalPrice{
+
+display:flex;
+justify-content:end;
+
 }
 @media screen and (max-width: 768px) {
   .Range {

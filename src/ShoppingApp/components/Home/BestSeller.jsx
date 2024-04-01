@@ -1,40 +1,13 @@
-import React from "react";
+import React,{useContext,useState} from "react";
 import styled from "styled-components";
 import { Carousel } from "@trendyol-js/react-carousel";
+import { ShopContext } from "../../contexts/shopContextProvider";
 import "./BestSeller.css";
+import Cart from "../Cart";
 function BestSeller() {
-  const allimags = [
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/shilajitvatiforstaminaenhancement.webp?v=1701926121&width=280",
-    },
-  ];
+
+  const {allProducts,addToCart,isLogin} = useContext(ShopContext)
+
   return (
     <div className="container">
       <Container>
@@ -49,7 +22,7 @@ function BestSeller() {
           Best Seller
         </h2>
         <p className="text-center mb-4 mt-3">
-          Best Selling range of ayurvedic products and medicine where ancient
+          Best.. Selling range of ayurvedic products and medicine where ancient
           wisdom meets modern wellness. Each product is meticulously crafted
           using Ayurveda principles for purity, potency and effectiveness. Our
           ayurvedic medicine online x store has rejuvenating supplements to
@@ -63,36 +36,12 @@ function BestSeller() {
         </Carousel>
       </Container> */}
 
+
+
         <Carousel show={3.5} slide={3} swiping={true}>
-          {allimags.map((val,index) => {
+          {allProducts.map((val,index) => {
             return (
-              <div key={index}>
-                <div
-                  className="card-group"
-                  style={{ width: "20rem", cursor: "pointer" }}
-                >
-                  <div className="card" style={{ width: "18rem" }}>
-                    <img src={val.url} className="card-img-top" alt="..." />
-                    <div className="card-body text-center">
-                      <h6s className=" text-center mb-2  ">
-                        <b> Pedego velid</b>
-                      </h6s>
-                      <div className="  text-center ">
-                        <div className="card-text mb-2">
-                          From ₹ 239
-                          <span style={{ color: "gray" }}>
-                            <s> ₹ 249</s>
-                          </span>
-                          <span className="offertext"> SAVE 11%</span>
-                        </div>
-                        <div className="card-text Addtocart">
-                          <button> Add To Cart </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <Cart val={val} key={index}/>       
             );
           })}
         </Carousel>

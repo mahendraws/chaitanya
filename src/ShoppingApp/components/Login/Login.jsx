@@ -9,7 +9,7 @@ import { ShopContext } from "../../contexts/shopContextProvider";
 
 function Login() {
   const navigate = useNavigate();
-const {setLogin,setCustID,setCartItems} = useContext(ShopContext)
+const {setCustName,setLogin,setCustID,setCartProduct,getTotalCartItemsLogin} = useContext(ShopContext)
   const [logininfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -33,12 +33,13 @@ const {setLogin,setCustID,setCartItems} = useContext(ShopContext)
         notify(response.data.error)
   
       }else{
-        setCartItems(9)
+
         setLogin(true)
         setCustID(response.data.cust_id)
+        setCustName(response.data.cust_name)
         notify(response.data.success)
       
-        setTimeout(function(){navigate("/AllProducts")},1000);
+        setTimeout(function(){navigate("/AllProducts");   getTotalCartItemsLogin(response.data.cust_id)},1000);
       }
     })
     .catch(function(err){ notify("Server is busy, Please try after some time...") })

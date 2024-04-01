@@ -1,28 +1,19 @@
-import React,{useState} from 'react'
-import product from "../../assets/ProductsImages/Madhumokshavatiforsugartretment_500x.jpg";
+import React,{useEffect, useState} from 'react'
+
 import Delete from "../../assets/images/delete.png";
 import minus from "../../assets/images/minus.png";
 import add from "../../assets/images/plus.png";
 
-function Cart({title,price}) {
+function Cart({order_id,ind,title,price,url,quantity,setTotalPrice,deleteCartItem,updateQuantity}) {
 
-    const [num, setNum] = useState(1);
 
-    const inc = () => {
-      setNum(num + 1);
-    };
-    const dec = () => {
-      if (num > 1) {
-        setNum(num - 1);
-      }
-    };
 
   return (
 
-
+   
 <div className="Product-info mt-4">
           <div className="Product-item">
-            <img src={product} alt="" width="160px" />
+            <img src={url} alt="" width="100px" />
             <div className="mt-4">
               <p style={{ color: "green" }}>{title}</p>
               <p>
@@ -32,11 +23,12 @@ function Cart({title,price}) {
             </div>
           </div>
 
+<div>
           <div className="Range">
             <div className="ProductRange">
               <div>
                 <img
-                  onClick={dec}
+                  onClick={()=>{updateQuantity(1,order_id)}}
                   src={minus}
                   alt=""
                   width="18px"
@@ -44,11 +36,11 @@ function Cart({title,price}) {
                 />
               </div>
               <div>
-                <span>{num}</span>
+                <span>{quantity}</span>
               </div>
               <div>
                 <img
-                  onClick={inc}
+                  onClick={()=>{updateQuantity(0,order_id)}}
                   src={add}
                   alt=""
                   width="18px"
@@ -56,15 +48,18 @@ function Cart({title,price}) {
                 />
               </div>
             </div>
-            <button className="mx-2">
+            <button className="mx-2" onClick={()=>{deleteCartItem(order_id)}}>
               <img src={Delete} alt="" width="23px" />
             </button>
           </div>
           <div className="LastPrice">
             <p>
-              <b>₹</b> 240 /-
+              <b>₹</b> {quantity*price} /-
             </p>
           </div>
+
+          </div>
+
         </div>
 
   
