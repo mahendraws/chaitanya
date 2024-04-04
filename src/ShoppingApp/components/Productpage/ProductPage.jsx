@@ -115,8 +115,11 @@ function ProductPage() {
             <li>{allProducts[currentProduct].benifitSection[2].desc}</li>
             <li>{allProducts[currentProduct].benifitSection[3].desc}</li>
           </ul>
+
+
           <div>
-            <span> Size:</span>
+            {/* <span> Size:</span>
+            
             <div className="PackeCartMain">
               {allProducts[currentProduct].size.map((item) => {
                 return (
@@ -126,9 +129,7 @@ function ProductPage() {
                         <div className="Heading-Text">
                           <p>PACK OF 1</p>
                         </div>
-                        {/* <div>
-                        <p>Save 200</p>
-                      </div> */}
+                    
                         <div className="Price-text">
                           <p> ₹{item.price}</p>
                         </div>
@@ -148,7 +149,8 @@ function ProductPage() {
                   </>
                 );
               })}
-            </div>
+            </div> */}
+
             <p style={{ color: "gray" }}>QUANTITY</p>
             <div className="ProductRange">
               <div>
