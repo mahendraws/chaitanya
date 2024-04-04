@@ -17,6 +17,7 @@ const ShopContextProvider = (props) => {
     const [isLogin,setLogin] = useState(false);
     const [custID,setCustID] = useState(0);
     const [cust_name,setCustName] = useState("");
+    const [custDetails,setCustDetails] = useState([{}])
     const [productID,setProductID] = useState(0);
 const [totalPrice,setTotalPrice] =  useState(0)
 const [cartProduct,setCartProduct] = useState([{}])
@@ -67,7 +68,14 @@ axios
     }
 
     const removeFromCart = (itemId) =>{
-        
+      setCartProduct([{}]);
+      setTotalPrice(0)
+      axios
+      .delete("https://www.ncenanded.com/project/chaitanya/getcarts.php", {data:{"order_id":-1}})
+      .then(function (response) {
+       // getProdData(response)
+      })
+
     }
 
     const deleteCartItem=(num)=>{
@@ -171,7 +179,7 @@ const updateQuantity=(no,id)=>{
   
 }
 
-    const contextValue = {cust_name,setCustName,updateQuantity,getTotalCartItemsLogin,cartProduct,setCartProduct,setTotalPrice,totalPrice,getProductDetails,setCartItems,custID,setCustID,productID,setProductID,setLogin,isLogin,getTotalCartItems,getTotalCartAmount,allProducts,cartItems,addToCart,deleteCartItem};
+    const contextValue = {removeFromCart,custDetails,setCustDetails,cust_name,setCustName,updateQuantity,getTotalCartItemsLogin,cartProduct,setCartProduct,setTotalPrice,totalPrice,getProductDetails,setCartItems,custID,setCustID,productID,setProductID,setLogin,isLogin,getTotalCartItems,getTotalCartAmount,allProducts,cartItems,addToCart,deleteCartItem};
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}     

@@ -9,16 +9,16 @@ function Profile() {
   const {custID} = useContext(ShopContext)
 
   const [profileData, setProfileData] = useState({
-    name: "Sudhanshu Gaikwad",
-    email: "sudhanshugaikwad517@gmail.com",
-    mobilenumber: "7219745613",
-    address1: "Airport Road",
-    address2: "Nanded",
-    newpassword: "pass123",
-    country: "India",
-    state: "Maharashtra",
-    city: "Nanded",
-    pincode: "431605",
+    name: "",
+    email: "",
+    mobilenumber: "",
+    address1: "",
+    address2: "",
+    newpassword: "",
+    country: "",
+    state: "",
+    city: "",
+    pincode: "",
     cust_id:"",
     isUpdate:"",
   });

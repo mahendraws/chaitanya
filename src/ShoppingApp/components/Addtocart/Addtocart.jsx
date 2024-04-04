@@ -4,10 +4,11 @@ import "./Addtocart.css";
 import axios from "axios";
 import { ShopContext } from "../../contexts/shopContextProvider";
 import Cart from "./Cart";
+import { useNavigate } from "react-router-dom";
 
 function Addtocart() {
   const {deleteCartItem,cartProduct,setTotalPrice,totalPrice,getTotalCartItems,updateQuantity} = useContext(ShopContext)
-
+const navigate = useNavigate()
 useEffect(()=>{
   //getTotalCartItems()
 
@@ -49,7 +50,7 @@ useEffect(()=>{
         </div>
 
         <div className="checkout">
-              <button>CHECK OUT</button>
+              <button onClick={()=>{navigate("/Checkout")}}>CHECK OUT</button>
         </div>
         </>:<>
         <h1 class="text-center">Your Cart Is Empty</h1>

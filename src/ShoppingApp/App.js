@@ -13,11 +13,14 @@ import Profile from "./components/Profile/Profile";
 import Addtocart from "./components/Addtocart/Addtocart";
 import WriteReviews from "./components/Reviews/WriteReviews";
 import Nopage from "./components/Nopage/Nopage";
-
+import CheckoutMain from "./components/Checkout/CheckoutMain"
+import MainThankyou from "./components/Thankyou/MainThankyou"
+import Footter from './components/footter/Footter'
+import RefundPolicy from './components/RefundPolicy/RefundPolicy'
 function App({ Component, pageProps }) {
   return (
     <div>
-      <PrimeReactProvider>
+  
         <BrowserRouter>
           <Navigation />
           <Routes>
@@ -30,12 +33,17 @@ function App({ Component, pageProps }) {
             <Route path="/Addtocart" element={<Addtocart />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Account" element={<Account />} />
+            <Route path="/Checkout" element={<CheckoutMain />} />
+            
+            <Route path="/Thankyou" element={<MainThankyou />} />
+            <Route path="/RefundPolicy" element={<RefundPolicy />} />
             <Route path="/WriteReviews" element={<WriteReviews />} />
 
             <Route path="*" element={<Nopage />} />
           </Routes>
+          <Footter/>
         </BrowserRouter>
-      </PrimeReactProvider>
+
     </div>
   );
 }
