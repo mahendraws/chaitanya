@@ -1,7 +1,8 @@
-import React,{useContext} from "react";
+import React,{useContext,useState} from "react";
 import { ShopContext } from "../../contexts/shopContextProvider";
-function ThankyouPayment({orderid}) {
+function ThankyouPayment({orderid,paymentid}) {
   const {totalPrice} = useContext(ShopContext)
+  const [totalPriceCopy,setTP] = useState(totalPrice)
   function getDate() {
     const today = new Date();
     const month = today.getMonth() + 1;
@@ -23,7 +24,7 @@ function ThankyouPayment({orderid}) {
         </div>
         <div>
           <p>Total:</p>
-          <span>₹ {totalPrice}</span>
+          <span>₹ {totalPriceCopy}</span>
         </div>
         <div>
           <p>Payment method:</p>

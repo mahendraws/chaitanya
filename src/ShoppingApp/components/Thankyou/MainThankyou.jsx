@@ -25,7 +25,7 @@ function MainThankyou() {
               <p>Thank You , Your order has been received..!</p>
             </div>
           </div>
-
+{console.log(" payment id from console.......      "+location.state.razorpay_payment_id)}
           <ThankyouPayment orderid={location.state.razorpay_order_id} paymentid={location.state.razorpay_payment_id}/>
 
           <div className="OrderDetails">
@@ -36,7 +36,7 @@ function MainThankyou() {
             <div>
 
 
-<OrderDetails orderid={location.state.razorpay_order_id}/>
+<OrderDetails orderid={location.state.razorpay_order_id} paymentid={location.state.razorpay_payment_id}/>
 
 
               

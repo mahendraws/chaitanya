@@ -20,7 +20,7 @@ const ShopContextProvider = (props) => {
     const [custDetails,setCustDetails] = useState([{}])
     const [productID,setProductID] = useState(0);
 const [totalPrice,setTotalPrice] =  useState(0)
-const [cartProduct,setCartProduct] = useState([{}])
+const [cartProduct,setCartProduct] = useState([])
 
 
 useEffect(()=>{
@@ -53,8 +53,8 @@ axios
 
   }else{
 
-    setCartItems(response.data.totalItems)
-
+    //setCartItems(response.data.totalItems)
+    getTotalCartItems()
 
     console.log("cart items ",cartItems)
    // setTimeout(function(){navigate("/AllProducts")},1000);
@@ -68,10 +68,10 @@ axios
     }
 
     const removeFromCart = (itemId) =>{
-      setCartProduct([{}]);
+      setCartProduct([]);
       setTotalPrice(0)
       axios
-      .delete("https://www.ncenanded.com/project/chaitanya/getcarts.php", {data:{"order_id":-1}})
+      .delete("https://www.ncenanded.com/project/chaitanya/getcarts.php", {data:{"cust_id":custID}})
       .then(function (response) {
        // getProdData(response)
       })
@@ -146,7 +146,7 @@ axios
       
         setCartProduct(alld)
 
-        console.log("all ------------  ",alld)
+        console.log("all cart product details ------------  ",alld)
 
       }
 

@@ -1,16 +1,17 @@
-import React,{useContext, useEffect} from "react";
+import React,{useContext, useEffect,useState} from "react";
 import { ShopContext } from "../../contexts/shopContextProvider";
 import axios from "axios";
 
 function OrderDetails({ orderid,paymentid }) {
   const {removeFromCart,cartProduct,totalPrice,custID} = useContext(ShopContext)
-
+const [cartProductCopy,setCartCopy] = useState(cartProduct)
+const [totalPriceCopy,setTP] = useState(totalPrice)
 useEffect(()=>{
 
 //console.log({"product_id":cartProduct.product_id,"rorder_id":orderid,"cust_id":custID,"quantity":cartProduct.quantity,"rpayment_id":paymentid})
 const data={"carts":cartProduct,"rorder_id":orderid,"cust_id":custID,"rpayment_id":paymentid}
 
-console.log("----- card product -----  ",data)
+console.log("----- card product th-----  ",data)
 axios
 .post("https://www.ncenanded.com/project/chaitanya/addRazorpayOrder.php", data)
 .then(function (response) {
@@ -18,7 +19,7 @@ axios
  console.log(response)
 })
 
-//removeFromCart()
+removeFromCart()
 },[])
 
 
@@ -42,7 +43,7 @@ axios
 
           <tbody>
             {
-              cartProduct.map((item,index)=>{
+              cartProductCopy.map((item,index)=>{
 
                 return <>
                { console.log("-----  ",item)}
@@ -67,7 +68,7 @@ axios
               </th>
               <th></th>
               <th className="text-end" scope="col">
-                ₹ {totalPrice} /-
+                ₹ {totalPriceCopy} /-
               </th>
             </tr>
           </thead>
