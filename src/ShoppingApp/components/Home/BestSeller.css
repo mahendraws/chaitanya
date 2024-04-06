@@ -25,3 +25,12 @@
   font-weight: 600;
   border: 1px solid black;
 }
+.arrowCenter{
+  display:flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  margin-top: -30px;
+  cursor: pointer;
+  }
+

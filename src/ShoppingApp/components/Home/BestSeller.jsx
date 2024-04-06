@@ -4,10 +4,18 @@ import { Carousel } from "@trendyol-js/react-carousel";
 import { ShopContext } from "../../contexts/shopContextProvider";
 import "./BestSeller.css";
 import Cart from "../Cart";
+import leftArrow from '../../assets/images/left-arrow.png'
+import rightArrow from '../../assets/images/right-arrow.png'
 function BestSeller() {
 
   const {allProducts,addToCart,isLogin} = useContext(ShopContext)
+const RightArrow=()=>{
+  return <div className="arrowCenter"><img src={rightArrow} alt="isf"/></div>
+}
 
+const LeftArrow=()=>{
+  return <div className="arrowCenter"><img src={leftArrow} alt="isf"/></div>
+}
   return (
     <div className="container">
       <Container>
@@ -29,16 +37,8 @@ function BestSeller() {
           luxurious skincare elixirs, we've selected time-tested remedies.
         </p>
 
-        {/* <Carousel itemCountPerPanel={3}>
-          {allimags.map((val) => (
-            <Item>{val.url}</Item>
-          ))}
-        </Carousel>
-      </Container> */}
 
-
-
-        <Carousel show={3.5} slide={3} swiping={true}>
+        <Carousel  show={3.5} slide={3} swiping={true} leftArrow={<LeftArrow/>} rightArrow={<RightArrow/>} >
           {allProducts.map((val,index) => {
             return (
                 <Cart val={val} key={index}/>       

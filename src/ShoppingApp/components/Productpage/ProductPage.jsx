@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import { ShopContext } from "../../contexts/shopContextProvider";
@@ -8,6 +8,7 @@ import Benefits from "./Benefits";
 import Ingredients from "./Ingredients";
 import HowToUseSection from "./HowToUseSection";
 import ProductDetails from "./ProductDetails";
+import WriteReviews from "../Reviews/WriteReviews"
 import "./style.css";
 
 import { useParams } from "react-router-dom";
@@ -21,8 +22,10 @@ function ProductPage() {
   const sProduct = useParams();
   let currentProduct = Number(sProduct.id) - 1;
   // const currentProduct = props.productId;
-  // console.log(currentProduct);
-  const { allProducts, addToCart, isLogin } = useContext(ShopContext);
+   console.log("current product...."+currentProduct);
+
+  const { filterreviews,allProducts, addToCart, isLogin } = useContext(ShopContext);
+
   const [num, SetNum] = useState(1);
   const incriment = () => {
     SetNum(num + 1);
@@ -40,6 +43,13 @@ function ProductPage() {
       addToCart(id, quantity);
     }
   };
+
+
+useEffect(()=>{
+
+
+
+},[])
 
   return (
     <>
@@ -102,7 +112,8 @@ function ProductPage() {
                     fontSize: "14px",
                   }}
                 >
-                  <Link to="/WriteReviews"> ( 1 TOTAL REVIEWS )</Link>
+                  <a href="#reviewSection">( {filterreviews.length} TOTAL REVIEWS )</a>
+                  {/* <Link to="#reviewSection"> ( {filterreviews.length} TOTAL REVIEWS )</Link> */}
                 </span>
               </div>
             </div>
@@ -304,6 +315,12 @@ function ProductPage() {
         />
       </div>
       {/* Product Details section End */}
+
+{/*Review Section starts*/}
+<div id="reviewSection"></div>
+<WriteReviews currentProduct={currentProduct}/>
+
+{/*Review Section Ends*/}
 
       {/* Talk to our Expert section start */}
       <div>

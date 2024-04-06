@@ -23,18 +23,20 @@ function Cart({val}) {
     <div>
 <div
                     className="card-group"
-                    style={{ width: "20rem", cursor: "pointer" }}
+                    style={{ width: "80%", cursor: "pointer",textAlign:"center" }}
                   >
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card" style={{border: "0.5px solid #e3e0e0"}} >
+                      <div>
                       <img
-                      width="100px"
                         src={val.productImages[0]}
-                        className="card-img-top"
+                        className="card-img-top imgw"
                         alt="..."
                         onClick={() => {
                           navigate(`/AllProducts/${val.productId}`);
                         }}
                       />
+</div>
+
                       <div className="card-body">
                         <h6 className=" text-center mb-2">
                           <b>{val.title}</b>

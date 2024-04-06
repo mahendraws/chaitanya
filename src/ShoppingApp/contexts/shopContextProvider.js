@@ -21,7 +21,7 @@ const ShopContextProvider = (props) => {
     const [productID,setProductID] = useState(0);
 const [totalPrice,setTotalPrice] =  useState(0)
 const [cartProduct,setCartProduct] = useState([])
-
+const [filterreviews, setFilterreviews] = useState([]);
 
 useEffect(()=>{
 
@@ -179,7 +179,7 @@ const updateQuantity=(no,id)=>{
   
 }
 
-    const contextValue = {removeFromCart,custDetails,setCustDetails,cust_name,setCustName,updateQuantity,getTotalCartItemsLogin,cartProduct,setCartProduct,setTotalPrice,totalPrice,getProductDetails,setCartItems,custID,setCustID,productID,setProductID,setLogin,isLogin,getTotalCartItems,getTotalCartAmount,allProducts,cartItems,addToCart,deleteCartItem};
+    const contextValue = {filterreviews, setFilterreviews,removeFromCart,custDetails,setCustDetails,cust_name,setCustName,updateQuantity,getTotalCartItemsLogin,cartProduct,setCartProduct,setTotalPrice,totalPrice,getProductDetails,setCartItems,custID,setCustID,productID,setProductID,setLogin,isLogin,getTotalCartItems,getTotalCartAmount,allProducts,cartItems,addToCart,deleteCartItem};
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}     

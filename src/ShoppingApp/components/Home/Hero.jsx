@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
-
+import Banner1 from '../../assets/carouselImages/banner1.jpg'
+import Banner2 from '../../assets/carouselImages/banner2.jpg'
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
   desktop: {
@@ -20,17 +21,12 @@ function Hero() {
   // Thi si Carousel Images
   const BannersData = [
     {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/herbal_health.webp?v=1704188055&width=1200",
+      url: Banner1,
     },
     {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/Stress_and_anxiety_banner.webp?v=1694248102&width=1200",
+      url: Banner2,
     },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/Constipation_care_Banner-03.webp?v=1692257845&width=1200",
-    },
-    {
-      url: "https://www.shrichyawanayurved.com/cdn/shop/files/mans_care_pack_for_improvement_in_mens_health.webp?v=1701846491&width=1200",
-    },
+   
   ];
   return (
     <>

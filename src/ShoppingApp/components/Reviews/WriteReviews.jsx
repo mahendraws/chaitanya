@@ -1,19 +1,52 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./Reviews.css";
 import Rating from "react-star-rating-lite";
 import Reviews from "./Reviews";
-function WriteReviews() {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { ShopContext } from "../../contexts/shopContextProvider";
+import axios from "axios";
+function WriteReviews({currentProduct}) {
+  const { custID,cust_name} = useContext(ShopContext);
+  const [writeReview,setWriteReview] = useState(false)
   const [data, setData] = useState({
-    name: "",
-    email: "",
+    name: cust_name,
     rating: "",
     reviewTitle: "",
     bodyofReview: "",
+    cust_id:custID,
+    product_id:currentProduct
   });
-
+  const notify = (mess) => toast(mess);
   // console.log(data.name);
   function sendData() {
+ 
     console.log(data);
+
+    if(data.rating === 0  || data.bodyofReview.trim() ==="" || data.reviewTitle.trim() ==="")
+    {
+      notify("Please Enter All Fields")
+      return;
+    }
+
+    axios
+    .post(
+      "https://www.ncenanded.com/project/chaitanya/review.php",
+      data
+    )
+    .then(function (response) {
+      notify("Review Added...")
+      setWriteReview(false)
+      console.log("from review insert .... ",response.data);
+      //navigate('/');
+    });
+
+  }
+
+  function checkWrite()
+  {
+
+    setWriteReview(true)
   }
 
   function onClickHandler(Val) {
@@ -23,7 +56,7 @@ function WriteReviews() {
   return (
     <>
       <div>
-        <div className="container MainBox">
+        <div className="container MainBox2">
           <div>
             <div className="Main-heading">
               <h4>Customer Reviews</h4>
@@ -39,32 +72,32 @@ function WriteReviews() {
                   <p style={{ color: "#455A64" }}>Based on 0 reviews</p>
                 </div>
                 <div>
-                  <p style={{ color: "green" }}>Write a review</p>
+                  <p style={{ color: "blue",textDecoration:"underline" }}><a href="javascript:void(0)" onClick={checkWrite}>Write a review</a></p>
                 </div>
               </div>
             </div>
           </div>
           <div>
             <hr />
+            
+{writeReview?
             <div>
               <div className="MainReview">
-                <h4>Write a review</h4>
+                
 
                 <div className="reviewFilds">
                   <div className="">
-                    <span style={{ color: "#455A64" }}>Name:</span>
+                 
                     <input
                       type="text"
-                      placeholder="Enter Your Name"
-                      onChange={(e) => {
-                        setData({ ...data, name: e.target.value });
-                      }}
+                     value={cust_name}
+                     hidden
                     />
                     {/* Live :{data.name} */}
                   </div>
                   <div className="mt-3">
-                    <span style={{ color: "#455A64" }}>Email :</span>
-                    <input
+                 
+                    <input hidden
                       type="text"
                       placeholder="Email"
                       onChange={(e) => {
@@ -108,14 +141,19 @@ function WriteReviews() {
                 </div>
               </div>
             </div>
+:""}
+
+
+
           </div>
           <div className="mt-4">
-            <Reviews productId={1} />
+            <Reviews productId={currentProduct} />
 
             <hr />
           </div>
         </div>
       </div>
+      <ToastContainer autoClose={1000}/>
     </>
   );
 }
