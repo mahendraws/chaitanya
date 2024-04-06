@@ -1,9 +1,16 @@
 import React from "react";
 import "./style.css";
+import howtouse from '../../assets/ProductsImages/howtouse.webp'
 function HowToUseSection({ num, imgurl, title }) {
   return (
     <>
-      <div class="card mx-3 MainCart">
+
+    <div>
+
+      <img src={howtouse} alt="howtouse" width="500px"/>
+    </div>
+
+      {/* <div class="card mx-3 MainCart">
         <span className="Box mx-4 mt-3">{num}</span>
         <img className="card-img-top p-4" src={imgurl} alt="Card cap" />
         <div className="card-body">
@@ -18,7 +25,7 @@ function HowToUseSection({ num, imgurl, title }) {
             {title}
           </h5>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

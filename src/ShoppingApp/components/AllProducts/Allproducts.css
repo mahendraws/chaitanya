@@ -26,6 +26,11 @@ body {
 }
 
 .imgw{
-  width:200px;
+  width:100%;
+  transition: 0.5s all;
 }
 
+.imgw:hover{
+  width:101%;
+border-radius: 20px;
+}

@@ -49,7 +49,7 @@ const {setCustName,setLogin,setCustID,setCartProduct,getTotalCartItemsLogin} = u
   const notify = (mess) => toast(mess);
   return (
     <>
-      <div className="container Main">
+      <div className="container-fluid Main">
         <div className="MainLogin">
           <h5>Login</h5>
 
@@ -82,7 +82,7 @@ const {setCustName,setLogin,setCustID,setCartProduct,getTotalCartItemsLogin} = u
               {/* {logininfo.password} */}
 
               <p className="F-pass">
-                <u>Forgot your password ? </u>
+                {/* <u>Forgot your password ? </u> */}
               </p>
             </div>
             <div className="Sign-btn">

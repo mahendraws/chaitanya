@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
-import BestSeller from "./BestSeller";
+import BestSellerNew from "./BestSellerNew";
 import Drslider from './Drsliders/Drsliders'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <BestSeller />
+      <BestSellerNew />
       <Drslider/>
       <ReviewSliders/>
     </>

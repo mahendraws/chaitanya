@@ -1,4 +1,5 @@
 import React, { useState,useContext } from "react";
+import {useNavigate} from 'react-router-dom'
 import "./Reviews.css";
 import Rating from "react-star-rating-lite";
 import Reviews from "./Reviews";
@@ -7,8 +8,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ShopContext } from "../../contexts/shopContextProvider";
 import axios from "axios";
 function WriteReviews({currentProduct}) {
-  const { custID,cust_name} = useContext(ShopContext);
+  const {isLogin, custID,cust_name} = useContext(ShopContext);
   const [writeReview,setWriteReview] = useState(false)
+  const navigate = useNavigate();
   const [data, setData] = useState({
     name: cust_name,
     rating: "",
@@ -45,8 +47,13 @@ function WriteReviews({currentProduct}) {
 
   function checkWrite()
   {
+if(isLogin){
+  setWriteReview(true)
+}else{
+  navigate('/Login');
 
-    setWriteReview(true)
+}
+  
   }
 
   function onClickHandler(Val) {

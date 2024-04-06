@@ -274,11 +274,11 @@ useEffect(()=>{
         >
           How to use
         </h2>
-        <div class="card-group">
+        <div class="card-group" style={{justifyContent:"center"}}>
 		
           <HowToUseSection
             num="1"
-            imgurl="https://www.shrichyawanayurved.com/cdn/shop/files/thyroid_care_capsule-25.webp?v=1694602199&width=500"
+            imgurl=""
             title="Thyroid Care Capsule"
           />
     

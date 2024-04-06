@@ -42,6 +42,7 @@ function ReviewSliders() {
   return (
     <>
       <div className="container" id="Main-Box">
+        <h2 className="text-center mb-4 text-success">Trusted by <b>1 Lakh</b> Customers</h2>
         <div className="slider-container">
           <Slider {...settings}>
             <div className="p-3">

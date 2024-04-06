@@ -37,7 +37,7 @@ console.log(props.productId)
               {val.title}
             </p>
             <p className="mb-1" style={{ fontSize: "14px" }}>
-              <b>{val.name}</b> {/*on <b>{val.user_email}</b>*/}
+              <b>By: {val.name}</b> {/*on <b>{val.user_email}</b>*/}
             </p>
             <p style={{ fontSize: "14px", color: "" }}>{val.comments}</p>
           </div>

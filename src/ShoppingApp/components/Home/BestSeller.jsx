@@ -38,7 +38,7 @@ const LeftArrow=()=>{
         </p>
 
 
-        <Carousel  show={3.5} slide={3} swiping={true} leftArrow={<LeftArrow/>} rightArrow={<RightArrow/>} >
+        <Carousel responsive="true"  show={3.5} slide={3} swiping={true} leftArrow={<LeftArrow/>} rightArrow={<RightArrow/>} >
           {allProducts.map((val,index) => {
             return (
                 <Cart val={val} key={index}/>       

@@ -11,6 +11,8 @@ body {
   height: 400px;
 }
 
+
+
 .left-info img {
   margin-top: 50px;
 
@@ -25,4 +27,11 @@ body {
 .one-info-box {
   position: relative;
   top: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Main-one {
+    flex-direction: column;
+    background-color: blanchedalmond;
+  }
 }

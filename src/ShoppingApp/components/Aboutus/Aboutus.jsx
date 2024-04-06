@@ -1,5 +1,6 @@
 import React from "react";
 import "./Aboutus.css";
+import ReviewSliders from '../Home/ReviewSliders/ReviewSliders'
 function Aboutus() {
   return (
     <>
@@ -44,6 +45,9 @@ function Aboutus() {
                 </div>
               </div>
             </div>
+
+<ReviewSliders/>
+
           </div>
         </div>
       </div>
