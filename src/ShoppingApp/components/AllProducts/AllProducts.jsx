@@ -11,8 +11,11 @@ function AllProducts() {
 
   return (
     <>
+    <h3 className="text-center text-success m-5">Shop By Product</h3>
+<br></br>
       <div className="container mt-4 ">
         <div class="row row-cols-1 row-cols-md-3">
+
           {allProducts.map((val, index) => {
             return (
               <div key={index}>

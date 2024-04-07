@@ -26,7 +26,7 @@ const logout=()=>{
   return (
     <>
 
-<nav className="navbar navbar-expand-sm bg-light navbar-light">
+<nav className="navbar navbar-expand-sm bg-light navbar-light ">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">  <img
             src={logo}
@@ -71,7 +71,7 @@ const logout=()=>{
                 />
             
             </a>
-          <ul className="dropdown-menu" id="dmenu" style={isLogin?{left:"0px"}:{left:"-80px"}}>
+          <ul className="dropdown-menu " id="dmenu" style={isLogin?{left:"0px"}:{left:"-80px"}}>
           {
                   (isLogin)?<>
                  
@@ -82,6 +82,16 @@ const logout=()=>{
                 }
           </ul>
         </li>
+
+        <Link to="/Addtocart">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  {cartProduct.length}
+                  <img src={addtocart} alt="Add To Cart" width="25px" />
+                </a>
+              </li>
+            </Link>
+
       </ul>
     </div>
   </div>

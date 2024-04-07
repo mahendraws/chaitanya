@@ -1,7 +1,8 @@
 import React,{useState,useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from "../contexts/shopContextProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Cart({val}) {
     const navigate = useNavigate()
 
@@ -12,13 +13,16 @@ function Cart({val}) {
         {
             navigate("/Login");
         }else{
+         
           addToCart(id,1)
+          //alert("Product Added")
+         // notify("Product Added to Cart")
         }
       
       
       }
 
-
+      const notify = (mess) => toast(mess);
   return (
     <div>
 <div
@@ -63,7 +67,7 @@ function Cart({val}) {
                     </div>
                   </div>
 
-
+                  <ToastContainer autoClose={1000}/>
     </div>
   )
 }

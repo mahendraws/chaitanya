@@ -45,7 +45,7 @@ function Account() {
 
   return (
     <>
-      <div className="container MainAc">
+      <div className="container-fluid MainAc">
         <div className="MainAccount">
           <h5>Create Account </h5>
 <form onSubmit={handelClickSendData}>

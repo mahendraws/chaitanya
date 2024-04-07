@@ -10,7 +10,7 @@ function Aboutus() {
             <div className="mt-3 mb-3 container main-about">
               <div>
                 <div>
-                  <h3 className="text-center">About Us</h3>
+                  <h3 className="text-center text-success">About Us</h3>
                 </div>
                 <hr />
                 <div>

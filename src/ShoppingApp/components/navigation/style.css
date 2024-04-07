@@ -105,4 +105,13 @@ a {
   cursor: pointer;
 }
 
+
+.menubg{
+  background-color: #09713a;
+}
+
+.dmenu{
+color:white;
+ background-color: #198754;
+}
 /* All Icons Css End  */

@@ -55,7 +55,7 @@ axios
 
     //setCartItems(response.data.totalItems)
     getTotalCartItems()
-
+    alert("Product Added");
     console.log("cart items ",cartItems)
    // setTimeout(function(){navigate("/AllProducts")},1000);
 

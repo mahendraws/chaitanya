@@ -17,6 +17,7 @@ import CheckoutMain from "./components/Checkout/CheckoutMain"
 import MainThankyou from "./components/Thankyou/MainThankyou"
 import Footter from './components/footter/Footter'
 import RefundPolicy from './components/RefundPolicy/RefundPolicy'
+import PrivacyPolicy from './components/privacy/PrivacyPolicy'
 function App({ Component, pageProps }) {
   return (
     <div>
@@ -37,6 +38,7 @@ function App({ Component, pageProps }) {
             
             <Route path="/Thankyou" element={<MainThankyou />} />
             <Route path="/RefundPolicy" element={<RefundPolicy />} />
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/WriteReviews" element={<WriteReviews />} />
 
             <Route path="*" element={<Nopage />} />

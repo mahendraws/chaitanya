@@ -24,11 +24,11 @@ function Footter() {
 
             <p
               onClick={() => {
-                navigate("/RefundPolicy");
+                navigate("/PrivacyPolicy");
               }}
               style={{ cursor: "pointer" }}
             >
-              REFUNDS & RETURNS
+              Privacy Policy
             </p>
             <p
               onClick={() => {

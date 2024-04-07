@@ -45,6 +45,11 @@ function ProductPage() {
   };
 
 
+  const buyNow=(id)=>{
+    addToCart(id, 1);
+    navigate("/CheckoutMain");
+  }
+
 useEffect(()=>{
 
 
@@ -199,9 +204,17 @@ useEffect(()=>{
               </button>
             </div>
             <div className="Bynow-btn2">
-              <Link to="/CheckoutMain">
-                <button>BUY IT NOW</button>
-              </Link>
+              
+                <button onClick={() => {
+                  if (!isLogin) {
+                    navigate("/Login");
+                  }else{
+                  addCart(allProducts[currentProduct].productId, num);
+                  navigate("/Checkout");
+                }
+
+                }}>BUY IT NOW</button>
+             
             </div>
           </div>
         </div>
