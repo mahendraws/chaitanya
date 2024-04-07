@@ -26,7 +26,7 @@ const logout=()=>{
   return (
     <>
 
-<nav className="navbar navbar-expand-sm bg-light navbar-light ">
+<nav className="navbar navbar-expand-sm bg-light navbar-light sticky-top ">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">  <img
             src={logo}
