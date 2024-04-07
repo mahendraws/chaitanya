@@ -50,3 +50,13 @@ body {
   text-transform: uppercase;
   font-size: 20px;
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .items-footter {
+    flex-direction: column;
+
+  }
+}
