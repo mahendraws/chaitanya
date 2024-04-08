@@ -7,7 +7,7 @@ function HowToUseSection({ num, imgurl, title }) {
 
     <div>
 
-      <img src={howtouse} alt="howtouse" width="500px"/>
+      <img src={howtouse} alt="howtouse" width="500px" class="howimg"/>
     </div>
 
       {/* <div class="card mx-3 MainCart">

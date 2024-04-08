@@ -152,6 +152,7 @@ body {
 /* Product Details css  Start   */
 .ProductsBox {
   position: relative;
+  width: 95%;
   top: 60px;
   padding: 20px;
   border: 1px solid grey;
@@ -160,10 +161,24 @@ body {
   margin-bottom: 20px;
 }
 
+
+.expert{
+ 
+  
+}
+
 @media screen and (max-width: 768px) {
   .ProductsBox {
     margin: 10px;
   }
+  .howimg{
+    width:400px;
+  }
+.pcontainer{
+
+  flex-direction: column;
+}
+
 }
 
 @media screen and (max-width: 480px) {

@@ -58,7 +58,7 @@ useEffect(()=>{
 
   return (
     <>
-      <div className="container main-comtainer">
+      <div className="container main-comtainer pcontainer">
         <div class="carousel-wrapper main2-Container ">
           <div>
             <Carousel>
@@ -337,7 +337,7 @@ useEffect(()=>{
 
       {/* Talk to our Expert section start */}
       <div>
-        <div className="main-Container">
+        <div className="main-Container expert">
           <div className="left-Box">
             <h2
               className="mt-4 mb-4"
@@ -359,7 +359,7 @@ useEffect(()=>{
             <img
               src="https://www.shrichyawanayurved.com/cdn/shop/files/take-consultation.jpg?v=1677910640"
               alt=""
-              width="500px"
+              width="95%"
             />
           </div>
         </div>
