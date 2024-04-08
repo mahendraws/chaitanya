@@ -142,13 +142,17 @@ useEffect(()=>{
               <h4>Proceed to Checkout</h4>
               <hr />
               <div className="container MainCheckout">
-                <div className="row col-7 ShippingDIV">
+              <div className="row">
+                <div className="col-md-7 ShippingDIV">
                   <ShppingAddress />
                  
                 </div>
-                <div className="row col-5 ProductINFO">
+                <div className="col-md-5 ProductINFO">
                   <ProductInfo />
                 </div>
+
+                </div>
+
               </div>
 
               <div className="mt-3 mb-3 review-Btn d-flex justify-content-between ">

@@ -25,8 +25,8 @@ removeFromCart()
 
   return (
     <>
-      <div>
-        <table class="table">
+      <div className="table-responsive-md">
+        <table className="table">
           <thead>
             <tr>
               <th className="text-start" scope="col">

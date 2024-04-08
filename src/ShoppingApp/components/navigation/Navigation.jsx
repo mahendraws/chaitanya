@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ import addtocart from "../../assets/images/cart.png";
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../../contexts/shopContextProvider";
 function Navigation() {
-
+  const [width, setWidth] = useState(window.innerWidth);
   const {cust_name,setCustName,setLogin,isLogin,cartItems,setCartProduct,setCustID,cartProduct} = useContext(ShopContext)
   // console.log(searchBox);
 const navigate = useNavigate()
@@ -23,6 +23,25 @@ const logout=()=>{
  setCartProduct([]);
  setCustName("")
 }
+
+
+
+useEffect(() => {
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+
+
+
+
   return (
     <>
 
@@ -33,6 +52,14 @@ const logout=()=>{
             width="120px"
             alt="Logo"
           /></a>
+          <div>
+            {width < 600?    <Link to="/Addtocart">
+                  {cartProduct.length}
+                  <img src={addtocart} alt="Add To Cart" width="25px" />
+            </Link>:"" }
+      
+
+          </div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span className="navbar-toggler-icon"></span>
     </button>

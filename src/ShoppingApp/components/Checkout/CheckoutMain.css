@@ -14,8 +14,8 @@ body {
   width: 100%;
 } */
 .MainCheckout {
-  display: flex;
-  justify-content: space-around;
+  
+
   padding: 0;
   border-radius: 10px;
 }
@@ -77,7 +77,7 @@ color:rgb(13, 121, 193);
 }
 
 .reviewFilds span {
-  color: #455a64;
+  color: #ffffff;
   font-weight: 600;
   font-size: 15px;
 }
@@ -86,21 +86,21 @@ color:rgb(13, 121, 193);
 /* ProductINFO Section Start  */
 
 .ProductINFO {
-  background-color: #9ce08d;
+  background-color: #09713a;
   padding: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .InfoHeading h5 {
-  color: #455a64;
+  color: #ffffff;
   font-weight: 600;
   font-size: 25px;
   text-transform: uppercase;
 }
 
 .Main-cart {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,7 +142,7 @@ width:70%;
 }
 
 .total{
-
+color:white;
   text-align: right;
   font-weight: bold;
 }

@@ -13,7 +13,7 @@ function ThankyouPayment({orderid,paymentid}) {
 
   return (
     <>
-      <div className=" main-payment-Box">
+      <div className="main-payment-Box">
         <div>
           <p>Order Number:</p>
           <span>{orderid}</span>
